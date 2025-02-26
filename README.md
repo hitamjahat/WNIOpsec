@@ -1,6 +1,6 @@
 # 🔒 Panduan Privasi Internet (Level Pemula sampai Expert)
 
-*Buat yang mau aman di internet, dari settingan dasar sampai mode ninja!*
+*Buat yang mau aman di internet, dari settingan dasar sampai mode ninja, berdasarkan pengalaman pribadi dan beberapa refrensi dari internet, kalau ada yang mau nambahin pull requests aja*
 
 ## **Level 1: Gampang** 🌱
 
@@ -77,7 +77,7 @@
 - Anggap Wi-Fi publik itu sarang hacker (selalu pake VPN!).
 - Rutin cek izin aplikasi (matiin akses kamera/lokasi yang ga perlu). Kalau perlu matiin GPS, idupin kalo pas pake maps atau order gojek/grab (irit batre sama privacy terjaga)
 
-## **Level 3: WNI** 🦸‍♂️
+## **Level 3: Hard** 
 
 *(Buat tech-geek yang ga takut ribet)*
 
@@ -94,15 +94,31 @@
 - Jangan serahin data ke cloud (mending self-host pake [Nextcloud](https://nextcloud.com/)). Serahkan diri hanya dengan yang Maha Kuasa.
 - Prioritaskan software/apliaksi *open-source* ketimbang yang berbayar/tertutup.
 
-## **Level 4: WNI** 🥷
+## **Level 4: WNI** 🦸‍♂️
 
 *(lahir jadi WNI berat gan, udah harus survival mode, ibarat kata level langsung expert baru main 5 menit udah ketemu final boss)*
 
 ### **Yang Harus Dilakukan:**
 
 1. **Jaringan Kegelapan** 🌑: Kombinasi Tor + *bridges*, atau [I2P](https://geti2p.net/). Jangan lupa pakai [Tails OS](https://tails.net/) biar ga ninggalin jejak. Panduanya ada di <https://www.youtube.com/watch?v=u5Lv_HXICpo>
-2. **Hardware Khusus** 🔑: Kunci akun pake [YubiKey](https://www.yubico.com/), simpan data penting kayak database KeepasXC dan lain lain di laptop *air-gapped* (ga pernah konek internet)/hardisk yang gak kecolok apapun, bisa dibuat kalung kaya Igor Saykoji.
-3. **Pisahkan Identitas** 👤: Bikin persona berbeda buat tiap aktivitas (e.g., akun medsos, kerja, dll.) + pake *virtual machine*. Bikin Email minimal 3/4. 1 buat personal/private use, yang menyangkut data data pribadi only, dipake buat apapun yang mengharuskan menggunakan data pribadi kaya Ebanking, djponline, daftar BPJS, kerjaan yang sifatnya buat nerima duit dll. Jangan share email tersebut, kalau bocor ya berarti providernya asshole. 1 lagi buat sosmed dan ecommerce, misal akun sosmedmu kena hack, data pribadimu aman karena beda email. 1 email burner, buat login login situs situs aneh, biasa kan mau pake service gratisan minta login email, nah ini waktunya email burner tampil, buat login situs situs kaya kaskus, figma, canva, chatgpt, behance, forum forum gajelas buat minta gratisan, bikin akun alter di twitter, ibarat kata emailmu yang ini bocor, data pribadi dan sosmed aman.
+2. **Hardware Khusus** 🔑: Kunci akun pake [YubiKey](https://www.yubico.com/), simpan data penting kayak database KeepasXC dan lain lain di laptop *air-gapped* (ga pernah konek internet)/hardisk yang gak kecolok apapun, bisa dibuat kalung kaya Igor Saykoji. Hardware key seperti YubiKey punya beberapa fungsi penting:
+
+    - **U2F/FIDO2**: Autentikasi tanpa password di Google, GitHub, Twitter, dll (anti-phishing karena verifikasi domain)
+    - **TOTP**: Simpan kode 2FA langsung di hardware (gak perlu app di HP yang bisa diretas)
+    - **GPG**: Tanda tangan digital & enkripsi email/file (key gak pernah keluar dari hardware)
+    - **PIV**: Login ke sistem tanpa password (Windows Hello, macOS, Linux)
+    - **Static Password**: Simpan password kompleks yang bisa dipanggil dengan sentuhan
+
+    Beberapa use case penting:
+    
+    - **Whistle Blower**: Enkripsi komunikasi tanpa takut key extraction
+    - **Sysadmin**: Akses server dengan aman tanpa ketergantungan HP
+    - **Developer**: Sign git commits & enkripsi kode dengan GPG
+    - **Jurnalis**: Protect source & enkripsi dokumen sensitif
+    - **Aktivis**: Lindungi identitas online dengan autentikasi yang gak bisa dibypass
+
+    Pilih hardware key dengan minimal dua buah (satu cadangan), simpan di tempat berbeda. Jangan lupa aktifkan di semua layanan penting sekaligus (Google, GitHub, Dropbox, dll). Saya pribadi cuman pakai buat kunci KeepassXC dan login laptop, untuk panduan lebih lengkapnya silahkan Googling, mau ngetik capek.
+3. **Pisahkan Identitas** 👤: Bikin persona berbeda buat tiap aktivitas (e.g., akun medsos, kerja, dll.) + pake *virtual machine*. Bikin Email minimal 3/4. 1 buat personal/private use, yang menyangkut data data pribadi only, dipake buat apapun yang mengharuskan menggunakan data pribadi kaya Ebanking, djponline, daftar BPJS, kerjaan yang sifatnya buat nerima duit dll. Jangan share email tersebut, kalau bocor ya berarti providernya asshole. 1 lagi buat sosmed dan ecommerce, misal akun sosmedmu kena hack, data pribadimu aman karena beda email. 1 email burner, buat login login situs situs aneh, biasa kan mau pake service gratisan minta login email, nah ini waktunya email burner tampil, buat login situs situs kaya kaskus, figma, canva, chatgpt, behance, forum forum gajelas buat minta gratisan, bikin akun alter di twitter, ibarat kata emailmu yang ini bocor, data pribadi dan sosmed aman. 1 email kantor/pekerjaan, biasanya udah disediaan sih, kalau belum ya bikin sendiri, khusus kerjaanya aja, lebih formal juga, nggak kecampur campur.
 4. **Anti Mata-Mata Total** 🕵️:
     - Ponsel *burner* + SIM anonim.
     - Bayar pake Monero atau cash fisik. jangan pake qris, dikira nantang gelud.
